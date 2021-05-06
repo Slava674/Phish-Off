@@ -1,0 +1,72 @@
+<!-- Phish Off quiz login 3 page-->
+<!-- Created by Viacheslav Rawles-->
+
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+      <!--Notify browser of encoding-->
+      <meta charset="utf-8">
+      <!--Responsive-->
+      <meta name="viewport" content="width=device-width, inital-scale=1.0">
+      <!--Link css file to html-->
+      <link rel="stylesheet" href="{{ url_for('static', filename='css/quizlogin3.css') }}"/>
+      <title>Quiz Login Level 3</title>
+    </head>
+    <body>
+      <!--Wrap design-->
+      <div class="wrapper">
+        <header class="header">
+           <img class="logo" src="{{ url_for('static', filename='images/logo.png') }}" alt="PhishOffLogo" width="155" height="100">
+           <!--Navigation Menu--> 
+           <ul>
+            <li><a href ="signup">SIGN UP</a></li>
+             <li><a href ="/phishsimulator">PHISH SIMULATOR</a></li>
+             <li><a class ="active" href ="/phishquiz">E-LEARNING QUIZ</a></li>
+             <li><a href ="/blog">BLOG</a></li>
+             <li><a href ="/home">HOME</a></li>
+           </ul>
+         </header>
+
+        <!--Quiz login notification-->
+        <article class="main">
+        <p class="quizinfo">Congratulations for reaching the final level!<br>The final level will consist of a series of images that are real phishing attacks.<br>You're goal is to detect the malicious characteristics of real phishing instances and beat the Phishers.</p>
+        <h2>Spotting Malicious Emails, Texts and Spoofed Webpages<br>Level 3</h2>
+        <!--Flask form-->
+            <form method="POST" action="{{ url_for('quizlogin3') }}">
+                <!--csrf token protection, validation-->
+                {{ quizlogin3.csrf_token }}
+                <!--name stringfield-->
+                {{ quizlogin3.name.label }}
+                {{ quizlogin3.name }}
+                <!--error alert, if the name is not 1 character or longer display error-->
+                {% for error in quizlogin3.name.errors %}
+                 <p style="color: red;">{{ error }}</p>
+                 {% endfor %}
+                <!--password field-->
+                {{ quizlogin3.password.label }}
+                {{ quizlogin3.password }}
+                <!--error alert, if the password is not the password given in the inital sign up email, display error-->
+                {% for error in quizlogin3.password.errors %}
+                <p style="color: red;">{{ error }}</p>
+                {% endfor %}
+                <!-- Submit form button -->
+                <input class="gobackbtn" value="Go Back" onclick="location.href = 'phishquiz';">
+                <input class="enterbtn" type="submit" value="Enter">
+            </form>
+    </article>
+
+    <!--Footer, 2nd menu moved down to footer panel as the side panel was removed-->
+    <footer class="footer">
+        <nav class="menu2">
+            <ul>
+                <li><a href ="about">ABOUT</a></li>
+                <li><a href ="archive">ARCHIVE</a></li>
+              </ul>
+          </nav>
+       <p>CI601<br>University of Brighton<br>vrawles@uni.brighton.ac.uk</p>
+       <img src="{{ url_for('static', filename='images/footericon.png') }}" alt="phishfooter" width="32" height="40">
+    </footer>
+
+      </div>
+    </body>
+</html>

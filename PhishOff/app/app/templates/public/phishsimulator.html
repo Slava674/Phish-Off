@@ -1,0 +1,104 @@
+<!-- Phish Off simulator-->
+<!-- Not working, To access this page, please directly load via the URL-->
+<!-- Created by Viacheslav Rawles-->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <!--Notify browser of encoding-->
+      <meta charset="utf-8">
+      <!--Responsive-->
+      <meta name="viewport" content="width=device-width, inital-scale=1.0">
+      <!--Link css file to html-->
+      <link rel="stylesheet" href="{{ url_for('static', filename='css/phishsimulator.css') }}">
+      <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>  
+      <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js" type="text/javascript"></script>
+      <title>Phish Simulator</title>
+    </head>
+    <body>
+      <!--Wrap design-->
+      <div class="wrapper">
+       <header class="header">
+          <!--Phish Off Logo-->
+          <a href="/home">
+            <img class="logo" src="{{ url_for('static', filename='images/logo.png') }}" alt="PhishOffLogo" width="155" height="100"></img>
+          </a>
+            <!--Navigation Menu-->
+          <ul>
+            <li><a href ="signup">SIGN UP</a></li>
+            <li><a class ="active" href ="/phishsimulator">PHISH SIMULATOR</a></li>
+            <li><a href ="/phishquiz">E-LEARNING QUIZ</a></li>
+            <li><a href ="/blog">BLOG</a></li>
+            <li><a href ="/home">HOME</a></li>
+          </ul>
+        </header>
+
+        <!--Main center page content -->
+        <article class="main">
+          <!-- Brief description of the Phish Simulator-->
+          <h1>Phish Simulator</h1>
+          <p class="phishinfo">The Phish Simulator is a feature of Phish Off that has been designed and created to allow Verified members of staff at Educational Institutes to send phishing like emails to their students to test them.
+                               Phish Simulator is not malicious, if the link on a template is opened by a user nothing will occur on their end however, the activity of that link click will be sent to the verified staff member. Please select your chosen phishing template to be sent to the student
+                               from the drop-down menu selection. 
+          <!-- Simulator templates, should have been displayed on googledrive. However, was unable to complete-->
+          <p class="paypalinfo">Paypal, an online payment service that allows people to send, transfer and recieve payments securely online. Paypal is widely used globally and is extremely popular with the younger generation due to the popularity of Paypal with e-commerce businesses.
+                                Criminals use Paypal as a subject of their attacks as the rewards of gaining access to a Paypal account could be huge. The phishing email template will be based on a email that is warning the recepient that their password has been changed, 'click here if you did not do this'</p>
+          <label>Preview template:</label><a href="https://drive.google.com/file/d/1wYrasqwvAlKW3_ZroD7xjqaW-sORR-81/view?usp=sharing" target="_blank">Paypal template</a>
+
+          <p class="amazoninfo">The E-commerce giant Amazon is the world's largest retailer. Amazon are commonly used as the subject of phishing attack emails as almost everyone has an account with Amazon. Another reason why amazon is a popular
+                                topic for phishing is because gaining access to a Amazon account could be greatly profitable for criminals, this is because sransactions on Amazon are rarely verified for saved details (Card verification only takes place if the card has not been active).
+                                Amazon is a hotspot for students as they offer cheap prices and next day delivery, the template is based on a recent order from Amazon and it will ask the user on the email to sign in.</p>
+          <label>Preview template:</label><a href="https://drive.google.com/file/d/1wYrasqwvAlKW3_ZroD7xjqaW-sORR-81/view?usp=sharing" target="_blank">Amazon template</a>
+          
+          <p class="blackboardinfo">Blackboard is an virtual learning environment that is used by various Universities use for teaching, content sharing, management of courses and student interaction. Blackboard is the online hub where students flock to for module content, resources and the email service.
+                                    It's clear that using blackboard for phishing attacks is an targeted attack as it's aimed at University lecturer's and also students. The Blackboard phishing email template could be especially effective as students don't particularly
+                                    pay that close enough attention to emails from Blackboard even though they are sent to their student emails. The Blackboard phishing template is based on some malicious login acivity that could raise red flags for students.</p>
+            <div id="lastimg">
+              <label class="lastlabel">Preview template:</label><a href="https://drive.google.com/file/d/1wYrasqwvAlKW3_ZroD7xjqaW-sORR-81/view?usp=sharing" target="_blank">Blackboard template</a>                     
+            </div>
+            <!--Flask form-->
+            <form class ="sendthetemplate" method="POST" action="{{ url_for('phishsimulator') }}">
+              <!--csrf token protection, validation-->
+              {{ phishsimulator.csrf_token }}
+              {{ phishsimulator.name.label }}    <!-- input name-->
+              {{ phishsimulator.name }}
+              <!--error alert, if the name is not 1 character or longer display error-->
+              {% for error in phishsimulator.name.errors %}
+              <p style="color: red;">{{ error }}</p>
+              {% endfor %}
+              <!--email field-->
+              {{ phishsimulator.email.label }}
+              {{ phishsimulator.email }}
+              <!--submit form button -->
+              <input class="sendtemplate" type="submit" value="Send"></input>
+          </form>
+        </article>
+        <!--left side panel, simulator selector-->
+        <aside id="leftpanel" class="aside aside1">
+          <label>Select a template:
+            <div id="templateselection" class="templates" style="width:400px;">
+              <select id="sel" onchange="templates()">
+                <option value="1" selected>Paypal</option>
+                <option value="2">Amazon</option>
+                <option value="3">Blackboard-Studentcentral</option>
+              </select>
+            </div>
+        </aside>
+
+        <!--right side panel, 2nd half of menu -->
+        <aside id="rightpanel" class="aside aside2">
+            <ul>
+              <li><a href ="about">ABOUT</a></li>
+              <li><a href ="archive">ARCHIVE</a></li>
+            </ul>
+        </aside>
+
+        <!--Footer info-->
+        <footer class="footer">
+          <p>CI601<br>University of Brighton<br>vrawles@uni.brighton.ac.uk</p>
+          <!--Footer icon-->
+          <img src="{{ url_for('static', filename='images/footericon.png') }}" alt="phishfooter" width="32" height="40">
+        </footer>
+    </div>
+  </body>
+</html>

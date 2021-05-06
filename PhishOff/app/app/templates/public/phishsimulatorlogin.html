@@ -1,0 +1,86 @@
+<!-- Phish Off simulator login page-->
+<!-- Phish simulator login does not work, directly load phish simulator from URL-->
+<!-- Created by Viacheslav Rawles-->
+
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+      <!--Notify browser of encoding-->
+      <meta charset="utf-8">
+      <!--Responsive-->
+      <meta name="viewport" content="width=device-width, inital-scale=1.0">
+      <!--Link css file to html-->
+      <link rel="stylesheet" href="{{ url_for('static', filename='css/phishsimulatorlogin.css') }}"/>
+      <title>Simulator Login</title>
+    </head>
+    <body>
+      <!--Wrap design-->
+      <div class="wrapper">
+        <header class="header">
+           <img class="logo" src="{{ url_for('static', filename='images/logo.png') }}" alt="PhishOffLogo" width="155" height="100">
+           <!--Navigation Menu--> 
+           <ul>
+            <li><a href ="signup">SIGN UP</a></li>
+             <li><a href ="/phishsimulatorlogin">PHISH SIMULATOR</a></li>
+             <li><a href ="/phishquiz">E-LEARNING QUIZ</a></li>
+             <li><a href ="/blog">BLOG</a></li>
+             <li><a href ="/home">HOME</a></li>
+           </ul>
+         </header>
+        <!--phish simulator login-->
+        <article class="main"> <!--notify users-->
+        <p class="phishinfo">Phish Simulator is a feature that is strictly only accessible for teachers who are currently teaching at Educational Establishments.<br>To recieve a one-time password, enter your Education email.</p>
+        <h1>Verify Education email</h1>
+          <form class="verify" method="POST" action="{{ url_for('phishsimulatorlogin') }}">
+          <!--csrf token protection, validation-->
+          {{ phishsimulatorlogin.csrf_token }}
+          <!--email stringfield-->
+          {{ phishsimulatorlogin.email.label }}
+          {{ phishsimulatorlogin.email }}
+          <input class="verifybtn" type="submit" value="Verify">
+          </form> <!--created for only education establishment teachers-->
+        <h2>Education Establishment teachers only</h2>
+          <form method="POST" action="{{ url_for('phishsimulatorlogin') }}">
+            <!--csrf token protection, validation-->
+            {{ phishsimulatorlogin.csrf_token }}
+            <!--name stringfield-->
+            {{ phishsimulatorlogin.email.label }}
+            {{ phishsimulatorlogin.email }}
+            <!-- password-->
+            {{ phishsimulatorlogin.password.label }}
+            {{ phishsimulatorlogin.password }}
+            <!--error alert, display error-->
+            {% for error in phishsimulatorlogin.password.errors %}
+            <p style="color: red;">{{ error }}</p>
+            {% endfor %}
+            <!-- submit form button -->
+            <input class="proceedbtn" type="submit" value="Proceed">
+          </form>
+           <!--Page to alert use of errors within the page-->
+           <body onload="alertuser()"></body>
+           <script>
+             function alertuser() {
+               alert("*** Due to underlying errors with flask-mail, please directly load up the phish simulator by typing in the URL directly. http://127.0.0.1:5000/phishsimulator ***");
+           }
+         </script>
+        </article>
+
+    <aside class="aside aside1">
+    </aside>
+
+      <!--right side panel, 2nd half of menu -->
+      <aside class="aside aside2">
+        <ul>
+          <li><a href ="about">ABOUT</a></li>
+          <li><a href ="archive">ARCHIVE</a></li>
+        </ul>
+      </aside>
+
+    <!--Footer-->
+    <footer class="footer">
+       <p>CI601<br>University of Brighton<br>vrawles@uni.brighton.ac.uk</p>
+       <img src="{{ url_for('static', filename='images/footericon.png') }}" alt="phishfooter" width="32" height="40">
+    </footer>
+      </div>
+    </body>
+</html>

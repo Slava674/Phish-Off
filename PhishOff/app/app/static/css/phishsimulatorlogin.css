@@ -1,0 +1,245 @@
+.wrapper {
+  display: flex;
+  flex-flow: row wrap;
+  text-align: center;
+  }
+    
+.wrapper > * {
+  padding: 10px;
+  margin: 10px;
+  flex: 1 100%;
+  border-radius: 10px;
+  }
+    
+.header {
+  background: rgb(255, 255, 255);
+  height: 100px;
+  }
+    
+.header ul {
+  padding: 0px;
+  margin: 0px;
+  list-style: none;
+  line-height: 32px;
+}
+    
+.header li a {
+  text-decoration: none;
+  font-size: 15px;
+  color: black;
+  font-family: 'Courier New', Courier, monospace;
+  padding: 0 20px; 
+  float: right;
+}
+    
+.header ul li a:hover {
+  color: rgb(96, 121, 233);
+  border-bottom: solid  aquamarine  2.5px;
+}
+    
+.header ul li a.active {
+  color: rgb(96, 121, 233);
+  font-weight: bolder;
+}
+    
+.logo {
+  float: left;
+  vertical-align: top;
+  width: 200px;
+  height: 140px;
+}
+    
+h1 {
+  font-size: 16px;
+  font-family:'Courier New', Courier, monospace;
+  font-weight: bold;
+  padding-top: 3%;
+  text-align: center;
+  padding-left: 25px;
+}
+  
+h2 {
+  font-size: 16px;
+  font-family:'Courier New', Courier, monospace;
+  font-weight: bold;
+  padding-top: 3%;
+  text-align: center;
+  padding-left: 25px;
+  padding-top: 120px;
+}
+    
+p {
+  font-size: 13px;
+  font-family: 'Courier New', Courier, monospace;
+}
+  
+.phishinfo {
+  padding-top: 5%;
+  padding-bottom: 2.5%;
+  line-height: 2;
+  text-align: center;
+  }
+    
+.footer {
+  font-family: 'Courier New', Courier, monospace;
+  background: white;
+  font-size: 13px;
+  line-height: 1.5;
+  text-align: right;
+  padding-right: 25px;
+  color: black;
+  padding-bottom: 4px;
+}
+  
+.verify {
+  padding-bottom: 4%;
+}
+
+.verifybtn {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 12px;
+  width: 70px;
+  height: 21px;
+  border: none;
+  outline: solid 1px  rgb(91, 88, 255);
+  background:rgb(255, 255, 255);
+  font-weight: bold;
+  color: rgb(65, 64, 64);
+}
+
+.verifybtn:hover {
+  cursor: pointer;
+  background-color: aquamarine;
+    
+}
+
+.proceedbtn {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 12px;
+  width: 70px;
+  height: 21px;
+  border: none;
+  outline: solid 1px  rgb(91, 88, 255);
+  background:rgb(255, 255, 255);
+  font-weight: bold;
+  color: rgb(65, 64, 64);
+}
+
+.proceedbtn:hover {
+  cursor: pointer;
+  background-color: aquamarine;
+}
+
+.menu2 ul {
+  padding-bottom: 0.2%;
+  text-decoration: none;
+}
+  
+.menu2 ul li {
+  list-style: none;
+  
+}
+  
+.menu2 ul li a { 
+  text-decoration: none;
+  color: black;
+  font-size: 15px;
+}
+  
+.menu2 ul li a:hover {
+  color: rgb(96, 121, 233);
+  border-bottom: solid  aquamarine  2.5px;
+}
+  
+.menu2 ul li a.active {
+  color: rgb(96, 121, 233);
+  font-weight: bolder;
+}
+  
+.main {
+  text-align: center;
+  font-family: 'Courier New', Courier, monospace;
+  background: rgb(255, 255, 255);
+  height: 500px;
+  font-size: 15px;
+  text-align: center;
+}
+  
+.main form {
+  padding-top: 1.5%;
+}
+  
+body > div > article > form.verify {
+  border-bottom: lightgray solid 0.3px;
+}
+
+body > div > article > form:nth-child(5) {
+  padding-top: 40px;
+  padding-bottom: 60px;
+}
+
+  .main h1 {
+    font-weight: bold;
+    text-align: center;
+    padding-top: 1.5%;
+  }
+  
+  .aside2 {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 15px;
+    padding-top: 27%;
+    padding-right: 30px;
+    list-style: none;
+    text-align: right;
+    letter-spacing: 1.5px;
+  
+  }
+  
+  .aside.aside2 ul {
+    list-style: none;
+    line-height: 2.2;
+  }
+  
+  .aside.aside2 ul li a{
+  color: black;
+  text-decoration: none;
+  }
+  
+  .aside.aside2 ul li a:hover {
+    color: rgb(96, 121, 233);
+    border-bottom: solid aquamarine 2.5px;
+  }
+  
+  .aside.aside2 ul li a.active {
+    color: rgb(96, 121, 233);
+    font-weight: bolder;
+  }
+  
+  @media all and (min-width: 400px){
+    .main {
+      flex: 3;
+    }
+  
+    .aside1 {
+      order: 1;
+    }
+  
+    .aside2 {
+      order: 2;
+    }
+  
+    .main{
+      order: 2;
+    }
+  
+    .footer {
+      order: 4;
+    }
+  }
+  
+  @media all and (min-width: 600px) {
+    .aside {
+      flex: 1;
+    }
+  }
+  

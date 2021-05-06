@@ -1,0 +1,101 @@
+<!-- Phish Off signup page-->
+<!-- Created by Viacheslav Rawles-->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <!--Notify browser of encoding-->
+      <meta charset="utf-8">
+      <!--Responsive-->
+      <meta name="viewport" content="width=device-width, inital-scale=1.0">
+      <!--Link css file to html-->
+      <link rel="stylesheet" href="{{ url_for('static', filename='css/signup.css') }}">
+      <title>Sign up</title>
+    </head>
+    <!--Link css file to html-->
+    <body>
+      <div class="wrapper">
+       <header class="header">
+         <!--Phish Off logo-->
+         <a href="/home">
+          <img class="logo" src="{{ url_for('static', filename='images/logo.png') }}" alt="PhishOffLogo" width="155" height="100">
+        </a>
+          <!--Navigation menu-->
+          <ul>
+            <li><a class ="active" href ="signup">SIGN UP</a></li>
+            <li><a href ="/phishsimulatorlogin">PHISH SIMULATOR</a></li>
+            <li><a href ="/phishquiz">E-LEARNING QUIZ</a></li>
+            <li><a href ="/blog">BLOG</a></li>
+            <li><a href ="/home">HOME</a></li>
+          </ul>
+        </header>
+        <!--Main page content-->
+        <article class="main">
+            <h1>Please sign up so you are able to access Phish Off's features!</h1>
+            <!--Flask form-->
+            <form method="POST" action="{{ url_for('signup') }}">
+                <!--csrf token protection, validation-->
+                {{ signup.csrf_token }}
+            <div id="signupname">
+                {{ signup.name.label }}
+                {{ signup.name }}
+                <!--error alert, name must be 1 character long-->
+                {% for error in signup.name.errors %}
+                <p style="color: rgb(17, 0, 255);">{{ error }}</p>
+                {% endfor %}
+            </div>
+            <div id="signupemail">
+                {{ signup.email.label }}
+                {{ signup.email }}
+                <!--error alert, email must be a valid email address-->
+                {% for error in signup.email.errors %}
+                <p style="color: rgb(17, 0, 255);">{{ error }}</p>
+                {% endfor %}
+              </div>
+              <div id="signuppassword">
+                {{ signup.password.label }}
+                {{ signup.password }}
+                <!--error alert, password must be atleast 7 characters long-->
+                {% for error in signup.password.errors %}
+                <p style="color: rgb(17, 0, 255);">{{ error }}</p>
+                {% endfor %}
+              </div>
+              <!--Stay logged in option for users-->
+            <div id="stayloggedincheckbox">
+              <input type="checkbox" class="stayloggedincheck" value="Stay_logged_in">Stay logged in?</input>
+            </div>
+                <!--submit form button -->
+              <input class="signupbtn" type="submit" value="Sign up">
+            </form>
+            <!--Redirect users to the login page if they have an account already-->
+            <h2>Already have an account?</h2>
+            <br>
+            <button onclick="location.href = 'login';" id="loginpagebtn">Login</button>
+
+            <!--Page to alert user of GDPR (General Data Protection Regulation 2018) Phish Off principles-->
+           <body onload="alertuser()"></body>
+            <script>
+              function alertuser() {
+                alert("*** Data collected by Phish Off is fairly and lawfully proccessed. This data is kept by Phish Off and Phish Off only and not supplied to any third-party organisations. Email's, Names and Passwords will be deleted from our records after a week from signup. ***");
+            }
+          </script>
+        </article>
+        <!--left side panel-->
+        <aside class="aside aside1">
+        </aside>
+        <!--right side panel, 2nd half of menu -->
+        <aside class="aside aside2">
+          <ul>
+            <li><a href ="about">ABOUT</a></li>
+            <li><a href ="archive">ARCHIVE</a></li>
+          </ul>
+        </aside>
+        <!--Footer-->
+        <footer class="footer">
+          <p>CI601<br>University of Brighton<br>vrawles@uni.brighton.ac.uk</p>
+          <img src="{{ url_for('static', filename='images/footericon.png') }}" alt="phishfooter" width="32" height="40">
+          <!--PhishOff footer logo-->
+        </footer>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,195 @@
+.wrapper {
+  display: flex;
+  flex-flow: row wrap;
+  text-align: center;
+  height: 500px;
+  }
+  
+.wrapper > * {
+  padding: 10px;
+  margin: 10px;
+  flex: 1 100%;
+  border-radius: 10px;
+  }
+  
+.header {
+  background: rgb(255, 255, 255);
+  height: 100px;
+  }
+  
+.header ul {
+  padding: 0px;
+  margin: 0px;
+  list-style: none;
+  line-height: 32px;
+}
+  
+.header li a {
+  text-decoration: none;
+  font-size: 15px;
+  color: black;
+  font-family: 'Courier New', Courier, monospace;
+  padding: 0 20px; 
+  float: right;
+}
+  
+.header ul li a:hover {
+  color: rgb(96, 121, 233);
+  border-bottom: solid aquamarine  2.5px;
+}
+  
+.header ul li a.active {
+  color: rgb(96, 121, 233);
+  font-weight: bolder;
+}
+  
+.logo {
+  float: left;
+  vertical-align: top;
+  width: 200px;
+  height: 140px;
+}
+  
+h1 {
+  font-size: 18px;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bolder;
+  color: rgb(46, 43, 226);
+  text-decoration: underline;
+  padding-top: 2%;
+}
+
+h2 {
+  font-size: 16px;
+  font-family:'Courier New', Courier, monospace;
+  font-weight: bold;
+  padding-top: 3%;
+  text-align: center;
+}
+  
+p {
+  font-size: 13px;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.quizinfo {
+  padding-top: 2.5%;
+  line-height: 2;
+  text-align: center;
+  font-size: 15px;
+}
+
+.enterbtn {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 12px;
+  width: 70px;
+  height: 20px;
+  border: none;
+  outline: solid 1px  rgb(91, 88, 255);
+  background:rgb(255, 255, 255);
+  font-weight: bold;
+  color: rgb(65, 64, 64);
+  }
+  
+.enterbtn:hover {
+  cursor: pointer;
+  background-color: aquamarine;
+  }
+
+.gobackbtn {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 12px;
+  width: 70px;
+  height: 18px;
+  border: none;
+  outline: solid 1px  rgb(91, 88, 255);
+  background:rgb(255, 255, 255);
+  font-weight: bold;
+  color: rgb(65, 64, 64);
+  text-align: center;
+}
+        
+.gobackbtn:hover {
+  cursor: pointer;
+  background-color: aquamarine;
+  }
+  
+  
+.footer {
+  font-family: 'Courier New', Courier, monospace;
+  background: white;
+  padding-top: 1.5%;
+  font-size: 11.5px;
+  line-height: 1.7;
+  text-align: right;
+  padding-right: 25px;
+  color: black;
+}
+
+.menu2 ul {
+  padding-bottom: 0.2%;
+  text-decoration: none;
+}
+
+.menu2 ul li {
+  list-style: none;
+
+}
+
+.menu2 ul li a { 
+  text-decoration: none;
+  color: black;
+  font-size: 15px;
+}
+
+.menu2 ul li a:hover {
+  color: rgb(96, 121, 233);
+  border-bottom: solid  aquamarine 2.5px;
+}
+
+.menu2 ul li a.active {
+  color: rgb(96, 121, 233);
+  font-weight: bolder;
+}
+
+.main {
+  text-align: center;
+  font-family: 'Courier New', Courier, monospace;
+  background: rgb(255, 255, 255);
+  height: 500px;
+  font-size: 15px;
+  text-align: center;
+}
+
+.main form {
+  padding-top: 1.5%;
+}
+  
+.main h1 {
+  font-weight: bold;
+  text-align: center;
+  padding-top: 1.5%;
+}
+
+@media all and (min-width: 400px){
+    .main {
+      flex: 3;
+    }
+  
+    .main{
+      order: 2;
+    }
+  
+    .footer {
+      order: 4;
+    }
+  }
+  
+  @media all and (min-width: 600px) {
+    .aside {
+      flex: 1;
+    }
+  }
+  
+  
+  

@@ -1,0 +1,375 @@
+.wrapper {
+  display: flex;
+  flex-flow: row wrap;
+  overflow: hidden;
+}
+
+.wrapper > * {
+  padding: 10px;
+  margin: 10px;
+  flex: 1 100%;
+  border-radius: 10px;
+}
+
+.header {
+  background: rgb(255, 255, 255);
+  height: 100px;
+}
+
+.header ul {
+  padding: 0px;
+  margin: 0px;
+  list-style: none;
+  line-height: 32px;
+}
+
+.header li a {
+  text-decoration: none;
+  font-size: 15px;
+  color: black;
+  font-family: 'Courier New', Courier, monospace;
+  padding: 0 25px; 
+  float: right;
+  letter-spacing: 1.5px;
+}
+
+.header ul li a:hover {
+  color: rgb(96, 121, 233);
+  border-bottom: solid aquamarine  2.5px;
+}
+
+.header ul li a.active {
+  color: rgb(96, 121, 233);
+  font-weight: bolder;
+}
+
+.logo {
+  float: left;
+  vertical-align: top;
+  width: 200px;
+  height: 140px;
+}
+
+.main {
+  font-family: 'Courier New', Courier, monospace;
+  background: rgb(255, 255, 255);
+  height: 500px;
+  font-size: 15px;
+}
+
+.main .container {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 12px;
+  margin-left: auto;
+  margin-right: auto;
+  height: 550px;
+  width: 1050px;
+  padding: 15px;
+  line-height: 1.5;
+  border: 1.25px solid rgb(188, 189, 255);
+  display: block;
+  position: relative;
+}
+
+.title {
+  text-align: center;
+  font-size: medium;
+  font-weight: bold;
+  padding-top: 10px;
+  font-family: 'Courier New', Courier, monospace;
+  letter-spacing: 1px;
+  color: rgb(91, 88, 255);
+  text-decoration: underline;
+}
+
+.question {
+  font-size: 16px;
+  padding: 15px;
+  border-radius: 21.5x;
+  background: rgb(255, 255, 255);
+  color: black;
+  border-bottom: solid 0.25px rgb(188, 189, 255);
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+.score {
+  font-weight: bold;
+  float: right;
+  color: rgb(52, 37, 255);
+}
+
+#quizlevel2Container > section > ul > li {
+  list-style: none;
+  line-height: 3.5;
+  font-size: 12px;
+}
+
+#quizlevel2Container > section > ul > li:hover {
+  cursor: pointer;
+  color: rgb(96, 121, 233);
+}
+
+#droppable {
+  width: 175px;
+  height: 175px;
+  color:white;
+  float: right;
+  clear: both;
+}
+
+#choice:hover {
+  background: rgb(255, 251, 0);
+  color: rgb(3, 0, 168);
+  cursor: pointer;
+}
+
+.buttonContainer {
+  position: relative;
+  top: 27%;
+  left: 87.5%;
+}
+
+.nxtbtn {
+  position:absolute;
+  width: 95px;
+  height: 30px;
+  border: none;
+  outline: solid 1px  rgb(91, 88, 255);
+  background:rgb(255, 255, 255);
+  font-weight: bold;
+  color: rgb(65, 64, 64);
+}
+
+.nxtbtn:hover {
+  color: rgb(91, 88, 255);
+  cursor: pointer;
+  background: rgb(220, 255, 232);
+}
+
+.buttonContainer2 {
+  position: relative;
+  top: 27%;
+  left: 3%
+}
+
+.bckbtn {
+  position: absolute;
+  width: 95px;
+  height: 30px;
+  border: none;
+  outline: solid 1px  rgb(91, 88, 255);
+  background:rgb(255, 255, 255);
+  font-weight: bold;
+  color: rgb(65, 64, 64);
+}
+
+.bckbtn:hover {
+  color: rgb(91, 88, 255);
+  cursor: pointer;
+  background: rgb(192, 252, 192);
+}
+
+#quizcounterContainer {
+  position: relative;
+}
+
+#quizCounter {
+  top: 93%;
+  left: 45%;
+  position:absolute;
+  font-size: 13px;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+h1 {
+  font-size: 18.5px;
+  padding-bottom: 15px;
+  color: rgb(126, 104, 253);
+  letter-spacing: 2.5px;
+}
+
+
+h2 {
+  font-size: 17px;
+  text-align: center;
+  text-decoration: underline;
+  padding-top: 0.75%;
+}
+
+#results p {
+  text-align: center;
+  font-size: 14px;
+}
+
+#results {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 20px;
+  text-align: center;
+  padding-top: 50px;
+}
+
+.resultborder {
+  border-bottom: blueviolet 1px solid;
+  padding-top: 10px;
+}
+
+.quizresultsborder {
+  border-bottom: blueviolet 1px solid;
+  padding-top: 10px;
+}
+
+.buttonContainer3 {
+  position: absolute;
+  width: 130px;
+  height: 50px;
+  border: none;
+  background:rgb(255, 255, 255);
+  font-weight: bold;
+  color: rgb(65, 64, 64);
+  left: 48.7%;
+  padding-top: 2%;
+  padding-left: 1.5%;
+}
+
+.buttonContainer4 {
+  position: absolute;
+  width: 130px;
+  height: 50px;
+  border: none;
+  background:rgb(255, 255, 255);
+  font-weight: bold;
+  color: rgb(65, 64, 64);
+  left: 42.7%;
+  padding-top: 2%;
+}
+
+.exitbtn {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 12px;
+  width: 120px;
+  height: 22px;
+  border: none;
+  outline: solid 1px  rgb(91, 88, 255);
+  background:rgb(255, 255, 255);
+  font-weight: bold;
+  color: rgb(65, 64, 64);
+}
+      
+.exitbtn:hover {
+  cursor: pointer;
+  background-color: aquamarine;
+}
+
+.restartbtn {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 12px;
+  width: 120px;
+  height: 22px;
+  border: none;
+  outline: solid 1px  rgb(91, 88, 255);
+  background:rgb(255, 255, 255);
+  font-weight: bold;
+  color: rgb(65, 64, 64);
+}
+      
+.restartbtn:hover {
+  cursor: pointer;
+  background-color: aquamarine;
+}
+
+.exitbutton {
+  position: absolute;
+  width: 95px;
+  height: 30px;
+  border: none;
+  outline: solid 1px  rgb(91, 88, 255);
+  background:rgb(255, 255, 255);
+  font-weight: bold;
+  color: rgb(65, 64, 64);
+}
+
+.restartbutton {
+  position: absolute;
+  left: 23%;
+  width: 95px;
+  height: 30px;
+  border: none;
+  outline: solid 1px  rgb(91, 88, 255);
+  background:rgb(255, 255, 255);
+  font-weight: bold;
+  color: rgb(65, 64, 64);
+}
+
+.restartbutton:hover {
+  color: rgb(91, 88, 255);
+  cursor: pointer;
+  background: rgb(192, 252, 192);
+}
+
+.exitbutton:hover {
+  color: rgb(91, 88, 255);
+  cursor: pointer;
+  background: rgb(192, 252, 192);
+}
+
+.footer {
+  font-family: 'Courier New', Courier, monospace;
+  background: white;
+  line-height: 1.9;
+  text-align: right;
+  padding-right: 25px;
+  color: black;
+  font-size: 15px;
+  padding-top: 0.2%;
+}
+
+.menu2 ul {
+  padding-bottom: 0.2%;
+  text-decoration: none;
+}
+
+.menu2 ul li {
+  list-style: none;
+
+}
+
+.menu2 ul li a { 
+  text-decoration: none;
+  color: black;
+  font-size: 15px;
+}
+
+.menu2 ul li a:hover {
+color: rgb(96, 121, 233);
+border-bottom: solid  aquamarine  2.5px;
+}
+
+.menu2 ul li a.active {
+color: rgb(96, 121, 233);
+font-weight: bolder;
+}
+
+@media all and (min-width: 400px){
+  .main {
+    flex: 3;
+  }
+
+  .main{
+    order: 2;
+  }
+
+  .footer {
+    order: 4;
+  }
+}
+
+@media all and (min-width: 600px) {
+  .aside {
+    flex: 1;
+  }
+}
+
+

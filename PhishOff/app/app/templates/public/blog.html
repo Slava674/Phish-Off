@@ -1,0 +1,106 @@
+<!-- Phish Off Blog page-->
+<!-- Created by Viacheslav Rawles-->
+
+<!--References used for blog content
+Medium. 2018. What are phishing, smishing and vishing?. [online] Available at: <https://medium.com/@fyde/what-are-phishing-smishing-and-vishing-2aebb25f11b4#:~:text=Smishing%20is%20a%20form%20of,messages%20more%20often%20than%20emails.> [Accessed 8 March 2021].
+Trendmicro. 2012. Spear-Phishing Email: Most Favored APT Attack Bait. [ebook] Cupertino: Trend Micro Incorporated, p.1. Available at: <https://documents.trendmicro.com/assets/wp/wp-spear-phishing-email-most-favored-apt-attack-bait.pdf> [Accessed 8 March 2021].
+Hern, A., 2016. Snapchat leaks employee pay data after CEO email scam. [online] the Guardian. Available at: <https://www.theguardian.com/technology/2016/feb/29/snapchat-leaks-employee-data-ceo-scam-email> [Accessed 8 March 2021].
+-->
+
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+      <!--Notify browser of encoding-->
+      <meta charset="utf-8">
+      <!--Responsive-->
+      <meta name="viewport" content="width=device-width, inital-scale=1.0">
+      <!--Link css file to html-->
+      <link rel="stylesheet" href="{{ url_for('static', filename='css/blog.css') }}"/>
+      <title>Blog</title>
+    </head>
+    <body>
+      <!--Wrap-->
+      <div class="wrapper">
+       <header class="header">
+          <!--Phish Off Logo-->
+          <a href="/home">
+            <img class="logo" src="{{ url_for('static', filename='images/logo.png') }}" alt="PhishOffLogo" width="155" height="100">
+          </a>
+          <!--Navigation menu-->
+          <ul>
+            <li><a href ="signup">SIGN UP</a></li>
+            <li><a href ="phishsimulatorlogin">PHISH SIMULATOR</a></li>
+            <li><a href ="phishquiz">E-LEARNING QUIZ</a></li>
+            <li><a class ="active" href ="blog">BLOG</a></li>
+            <li><a href ="home">HOME</a></li>
+          </ul>
+        </header>
+
+        <!--Main page blog content-->
+        <article class="main">
+          <h1>What you need to know about Phishing</h1>
+          <p>
+            <!--toggle widget to show text when clicked to open, text is hidden for a details element when widget is closed-->
+            <details> <!-- content -->
+              <summary>What is Social engineering?</summary>
+              <p>Social engineering is the art of using psychology to manipulate people into giving up sensitive and confidential information. Social engineering is predominately used maliciously as an attack on people; however, it is also used by penetration testers to thoroughly test the security of organizations.<br></p>
+              <p>Social engineering has been and is still an increasing attack vector that is used by criminals due to its simplicity and its effectiveness over a standard system or software hack. For example, a hacker can just simply send out a phishing attack to hundreds or thousands of emails sit back and wait.</p>
+              <p>These social engineering attacks are successful due to the sheer lack of security awareness. It has been said that 95% of cybersecurity breaches are caused by human error, this is because humans are the biggest vulnerability of every system (Sobers, 2021).</p>
+            </details>
+            <br>
+            <details> <!-- content -->
+              <summary>What is Phishing?</summary>
+              <p>Phishing is the most common social engineering attack that’s main goals are usually to gain insight on people’s confidential information such as account login details and financial information like credit card numbers. Phishing attacks are mainly delivered by emails and text messages this being the reason why they are so common (Deloitte, 2019).<br><br>
+                A typical phishing attack would be delivered by a human entity that is pretending to be a popular organization like Amazon, they will send a ‘Unusual account activity email’ to thousands of addresses asking users to please click on this link that is given in the email. The links in the phishing emails are malicious and have been created to record data that is submitted into the form, this data will then be sent to the attacker, the attacker will then have full access to your Amazon account depending on whether the user has 2FA (Two Factor Authentication) enabled.<br><br>
+                Not only are phishing attacks targeted towards normal individuals, but they are also used to target employees at organizations in order to gain unauthorized access to systems to steal data, plant malware or even go onto targeting management roles that have superior privilege rights and access controls. 
+                According to Phishing and Email Fraud Statistics 2019 by Retruster, Phishing has been involved in 90% of data breaches and Phishing attempts have grown 65% in the last year. From these statistics you can see how much of a problem that Phishing is and it is only increasing (Retruster, 2019)
+              </p>
+            </details>
+            <br>
+            <details> <!-- content -->
+              <summary>Types of Phishing attacks</summary>
+              <p><b>Email Phishing</b> is the most common type of Phishing technique due to the attack being delivered by an email. The attacker disguises themselves as a highly reputable company and send’s a malicious link that will take the users to a fake domain that will then record the details input by the victim. In most cases phishing emails can be easily distinguished as the sender email address is typically a jumble of characters featuring the organizations name amongst the characters. However, some organizations themselves use confusing email domains that can throw off users into thinking it can be legit.<br><br>
+                <b>Smishing</b> is just like Email Phishing but the attacks are delivered by SMS messages. The attacks are sent from unknown numbers and often contain malicious links. The attackers create a sense of urgency as they use topics like ‘There has been some unusually activity on your account, please check’. Smishing can be said to be a more effective approach for a phisher due to the global text message open rate being 94% compared to a email open rate of 30% (Medium, 2018)<br><br>
+                <!--  Medium. 2018. What are phishing, smishing and vishing?. [online] Available at: <https://medium.com/@fyde/what-are-phishing-smishing-and-vishing-2aebb25f11b4#:~:text=Smishing%20is%20a%20form%20of,messages%20more%20often%20than%20emails.> [Accessed 8 March 2021]. -->
+                <b>Spear Phishing</b> is a phishing attack that is specifically targeted at individual targets or groups within an organization. Most of the time these attacks are well prepared due to the collection of data previously about the target(s) (Spear-Phishing Email: Most Favored APT Attack Bait, 2012). The attackers pretend to be a familiar face to the target using tones and characteristics they recognize and are used to. These attacks come with a high impact due to targets usually being employees of organizations. <br><br>
+                <!--2012. Spear-Phishing Email: Most Favored APT Attack Bait. [ebook] Cupertino: Trend Micro Incorporated, p.1. Available at: <https://documents.trendmicro.com/assets/wp/wp-spear-phishing-email-most-favored-apt-attack-bait.pdf> [Accessed 8 March 2021].-->
+                <b>Whaling</b> the phishing attack that is simply a spear phishing attack, but the targets are management roles of an organization. Whaling targets executive bodies such as CFO (Chief Financial Officer) and CEO (Chief Executive Officer). Not only are the targets bigger but the attackers pretend to be executives in the hope of extracting more sensitive information from organization employees due to being an executive figure. <br><br>
+                In 2016 a HR staff member at Snapchat fell victim to a whaling attack that pretended to be the chief executive Evan Spiegel, the employee of Snapchat ended up sending Snapchat’s employee payroll data to the cybercriminal (Hern, 2016). <br><br>
+                <!--Hern, A., 2016. Snapchat leaks employee pay data after CEO email scam. [online] the Guardian. Available at: <https://www.theguardian.com/technology/2016/feb/29/snapchat-leaks-employee-data-ceo-scam-email> [Accessed 8 March 2021].-->
+              </p>
+            </details>
+            <br>
+            <details> <!-- content -->
+              <summary>How to avoid falling victim to an Phishing attack</summary>
+              <p><b>Preventing phishing attacks</b> tips are basic yet extremely effective against phishing attacks. The effectiveness of the following tips totally depends on the user and their behavior towards cyber security, users can be careless, but most users are unaware of the threats due to a lack of knowledge in computer security awareness.<br><br>
+                <b>1.</b> Always check the source from where the message or email has come from. Check sender emails and phone numbers.<br><br>
+                <b>2.</b> Be hesitant of all attachments even from trusted bodies, attachments can carry malware this could greatly affect you and your system.<br><br>
+                <b>3.</b>	Be aware of ‘Urgent’ language. Most cybercriminals use alarming language to panic the target into giving away sensitive information.<br><br>
+                <b>4.</b> Never click on a link that seems malicious or if you are not sure of. Always make sure you do your research before clicking on any links, even if they are sent from family, friends and co-workers.<br><br>
+                <b>5.</b> Always keep your system and software up to date, a lot of software now contains a form of protection against cyberattacks where the software or your system will notify you if they deem something as suspicious. For example, operating systems are always being updated with the latest protection against new cyberattacks.<br><br>
+              </p>
+            </details>
+        <!--Script to only allow 1 details element to be open at one time, when a second widget is toggled the previous closes if open -->
+        <script src="{{ url_for('static', filename='js/blogscript.js') }}"></script>
+        </article>
+
+        <!--left side panel-->
+        <aside class="aside aside1">
+        </aside>
+        <!--right side panel, 2nd menu-->
+        <aside class="aside aside2">
+            <ul>
+              <li><a href ="about">ABOUT</a></li>
+              <li><a href ="archive">ARCHIVE</a></li>
+            </ul>
+        </aside>
+
+        <!--footer info-->
+        <footer class="footer">
+          <p>CI601<br>University of Brighton<br>vrawles@uni.brighton.ac.uk</p>
+          <!--footer icon-->
+          <img src="{{ url_for('static', filename='images/footericon.png') }}" alt="phishfooter" width="32" height="40">
+        </footer>
+    </div>
+  </body>
+</html>

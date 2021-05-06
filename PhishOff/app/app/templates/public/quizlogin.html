@@ -1,0 +1,72 @@
+<!-- Phish Off quiz login page-->
+<!-- Created by Viacheslav Rawles-->
+
+
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+      <!--Notify browser of encoding-->
+      <meta charset="utf-8">
+      <!--Responsive-->
+      <meta name="viewport" content="width=device-width, inital-scale=1.0">
+      <!--Link css file to html-->
+      <link rel="stylesheet" href="{{ url_for('static', filename='css/quizlogin.css') }}"/>
+      <title>Quiz Login</title>
+    </head>
+    <body>
+      <!--Wrap design-->
+      <div class="wrapper">
+        <header class="header">
+           <img class="logo" src="{{ url_for('static', filename='images/logo.png') }}" alt="PhishOffLogo" width="155" height="100">
+           <!--Navigation Menu--> 
+           <ul>
+            <li><a href ="signup">SIGN UP</a></li>
+             <li><a href ="/phishsimulatorlogin">PHISH SIMULATOR</a></li>
+             <li><a class ="active" href ="/phishquiz">E-LEARNING QUIZ</a></li>
+             <li><a href ="/blog">BLOG</a></li>
+             <li><a href ="/home">HOME</a></li>
+           </ul>
+         </header>
+
+        <!--Quiz login notification-->
+        <article class="main">
+        <p class="quizinfo">To access the Quiz please navigate to the Menu and sign up with your email.<br>You will recieve the quiz password in the welcome email, please remember to check the Junk folder.</p>
+        <h2>Email and Text Phishing Quiz<br>Level 1</h2>
+        <!--Flask form-->
+            <form method="POST" action="{{ url_for('quizlogin') }}">
+                <!--csrf token protection, validation-->
+                {{ quizlogin.csrf_token }}
+                <!--name stringfield-->
+                {{ quizlogin.name.label }}
+                {{ quizlogin.name }}
+                <!--error alert, if the name is not 1 character or longer display error-->
+                {% for error in quizlogin.name.errors %}
+                 <p style="color: rgb(25, 0, 255);">{{ error }}</p>
+                 {% endfor %}
+                <!--password field-->
+                {{ quizlogin.password.label }}
+                {{ quizlogin.password }}
+                <!--error alert, if the password is not the password given in the inital sign up email, display error-->
+                {% for error in quizlogin.password.errors %}
+                <p style="color: rgb(25, 0, 255);">{{ error }}</p>
+                {% endfor %}
+                <!-- Submit form button -->
+                <input type="submit" value="Submit">
+            </form>
+    </article>
+
+    <!--Footer, 2nd menu moved down to footer panel as the side panel was removed-->
+    <footer class="footer">
+        <nav class="menu2">
+            <ul>
+                <li><a href ="about">ABOUT</a></li>
+                <li><a href ="archive">ARCHIVE</a></li>
+              </ul>
+          </nav>
+       <p>CI601<br>University of Brighton<br>vrawles@uni.brighton.ac.uk</p>
+       <img src="{{ url_for('static', filename='images/footericon.png') }}" alt="phishfooter" width="32" height="40">
+    </footer>
+
+      </div>
+    </body>
+</html>
